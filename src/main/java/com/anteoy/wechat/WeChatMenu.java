@@ -1,6 +1,8 @@
-/*
 package com.anteoy.wechat;
 
+
+import com.anteoy.common.Common;
+import com.anteoy.util.FileUtil;
 import net.sf.json.JSONObject;
 
 public class WeChatMenu {
@@ -12,11 +14,9 @@ public class WeChatMenu {
 
 	}
 
-	*/
-/**
+	/**
 	 * 获取所有菜单
-	 *//*
-
+	 */
 	public static void getmenu() {
 		String accessToken = WeChatUtil.getAccessToken().getToken();
 		String url = "https://api.weixin.qq.com/cgi-bin/menu/get?access_token=ACCESS_TOKEN".replaceAll("ACCESS_TOKEN", accessToken);
@@ -25,11 +25,9 @@ public class WeChatMenu {
 		System.out.println(jsonObject.toString());
 	}
 
-	*/
-/**
+	/**
 	 * 删除所有菜单
-	 *//*
-
+	 */
 	public static void deletemenu() {
 		String accessToken = WeChatUtil.getAccessToken().getToken();
 		String url = "https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN".replaceAll("ACCESS_TOKEN", accessToken);
@@ -38,11 +36,9 @@ public class WeChatMenu {
 		System.out.println(jsonObject.toString());
 	}
 
-	*/
-/**
+	/**
 	 * 创建用户菜单
-	 *//*
-
+	 */
 	public static void chuangjyhcd() {
 		
 //		String path = WeChatTempl.class.getClassLoader().getResource("/").getPath()+"chuangjyhcd.json"; //web项目下运行的路径
@@ -59,11 +55,9 @@ public class WeChatMenu {
 			System.out.println("菜单创建失败");
 	}
 
-	*/
-/**
+	/**
 	 * 创建医生个性化菜单
-	 *//*
-
+	 */
 	public static void chuangjyscd() {
 
 //		String path = WeChatTempl.class.getClassLoader().getResource("/").getPath()+"chuangjcd.json";
@@ -85,11 +79,10 @@ public class WeChatMenu {
 		json = json.replace("\t", "");
 		json = json.replace("\r", "");
 		json = json.replace("\n", "");
-		json = json.replace("{Common.URL}", "\""+Common.URL);
+		json = json.replace("{Common.URL}", "\""+ Common.URL);
 		return json;
 	}
 
 	
 
 }
-*/

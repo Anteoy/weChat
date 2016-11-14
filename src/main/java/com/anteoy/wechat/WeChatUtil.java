@@ -1,8 +1,8 @@
-/*
 package com.anteoy.wechat;
 
 
 import com.anteoy.util.FileUtil;
+import com.anteoy.wechat.entity.*;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
@@ -18,80 +18,52 @@ import java.net.URL;
 
 public class WeChatUtil {
 	
-	*/
-/** 接口调用凭证 *//*
-
+	/** 接口调用凭证 */
 	public static AccessToken ACCESS_TOKEN = null;
 	
 	public static JsapiTicket JSAPI_TICKET = null;
 	
-	*/
-/** 应用ID *//*
-
-	public static final String APPID = "wxd634b728e67d2c87";
+	/** 应用ID */
+	public static final String APPID = "wx125f0e830661063b";
 	
-	*/
-/** 应用密钥 *//*
-
-	private static final String APPSECRET = "a4a19164daadf25a37d53f9ea6fb5669";
+	/** 应用密钥 */
+	private static final String APPSECRET = "9a4893127358441cbae4734ede4f9558";
 	
-	*/
-/** 创建菜单接口 *//*
-
+	/** 创建菜单接口 */
 	private static String MENU_CREATE_URL = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN";
 
-	*/
-/** 获取ACCESS_TOKEN接口 *//*
-
+	/** 获取ACCESS_TOKEN接口 */
 	private final static String ACCESS_TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
 
-	*/
-/** 获取JSAPI_TICKET接口 *//*
-
+	/** 获取JSAPI_TICKET接口 */
 	private final static String JSAPI_TICKET_URl = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi";
 	
-	*/
-/** 创建分组接口 *//*
-
+	/** 创建分组接口 */
 	private static String GROUP_CREATE = "https://api.weixin.qq.com/cgi-bin/groups/create?access_token=ACCESS_TOKEN";
 
-	*/
-/** 移动用户到指定组接口 *//*
-
+	/** 移动用户到指定组接口 */
 	private static String MOVE_GROUP = "https://api.weixin.qq.com/cgi-bin/groups/members/update?access_token=ACCESS_TOKEN";
 
 	private static String DELETE_GROUP = "https://api.weixin.qq.com/cgi-bin/groups/delete?access_token=ACCESS_TOKEN";
 
 	private static String QUERY_GROUP = "https://api.weixin.qq.com/cgi-bin/groups/get?access_token=ACCESS_TOKEN";
 
-	*/
-/** 设置个性化菜单 *//*
-
+	/** 设置个性化菜单 */
 	private static String TEST_ADDITIONAL_MENU = "https://api.weixin.qq.com/cgi-bin/menu/trymatch?access_token=ACCESS_TOKEN";
 
-	*/
-/** 设置所属行业 *//*
-
+	/** 设置所属行业 */
 	private static String SHEZSSHY = "https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN";
 
-	*/
-/** 获得模板消息id *//*
-
+	/** 获得模板消息id */
 	private static String HUODMBXXID = "https://api.weixin.qq.com/cgi-bin/template/api_add_template?access_token=ACCESS_TOKEN";
 
-	*/
-/** 发送模板消息 *//*
-
+	/** 发送模板消息 */
 	private static String FASMBXX = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN";
 
-	*/
-/** 发送普通信息 *//*
-
+	/** 发送普通信息 */
 	private static String FASPTXX = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN";
 
-	*/
-/** 创建个性化菜单接口 *//*
-
+	/** 创建个性化菜单接口 */
 	public static String ADDITIONALMENU_CREATE_URL = "https://api.weixin.qq.com/cgi-bin/menu/addconditional?access_token=ACCESS_TOKEN";
 
 	static { 
@@ -100,9 +72,7 @@ public class WeChatUtil {
 	}
 
 	
-	*/
-/* 发送请求到微信服务器，获取返回信息 *//*
-
+	/* 发送请求到微信服务器，获取返回信息 */
 	public static JSONObject httpRequest(String requestUrl, String requestMethod, String outputStr) {
 		JSONObject jsonObject = null;
 		StringBuffer buffer = new StringBuffer();
@@ -177,12 +147,10 @@ public class WeChatUtil {
 	public static void main(String[] args) {
 	}
 
-	*/
-/**
+	/**
 	 * 获取access_token
 	 * @return
-	 *//*
-
+	 */
 	public static AccessToken getAccessToken() {
 		
 		if (null == ACCESS_TOKEN.getToken() || ACCESS_TOKEN.getToken().equals("") || !checkAccessToken()) {
@@ -197,7 +165,7 @@ public class WeChatUtil {
 				} catch (JSONException e) {
 					ACCESS_TOKEN.setToken(null);
 					// 获取token失败
-					System.out.println("获取TOKEN失败("+jsonObject.getInt("errcode")+")："+WeChatErrorCode.ERRORCODE.get(jsonObject.getInt("errcode")));
+					System.out.println("获取TOKEN失败("+jsonObject.getInt("errcode")+")："+ WeChatErrorCode.ERRORCODE.get(jsonObject.getInt("errcode")));
 				}
 			}
 		}
@@ -211,12 +179,10 @@ public class WeChatUtil {
 		return flag;
 	}
 
-	*/
-/**
+	/**
 	 * 单例模式获取jsapi_ticket
 	 * @return
-	 *//*
-
+	 */
 	public static JsapiTicket GetJsapiTicket() {
 		if (null == JSAPI_TICKET.getTicket() || JSAPI_TICKET.getTicket().equals("") || !checkJsapiTicket()) {
 			getAccessToken();//获取access_token
@@ -238,11 +204,9 @@ public class WeChatUtil {
 		return JSAPI_TICKET;
 	}
 	
-	*/
-/*
+	/*
 	 * 检验ticket是否失效
-	 *//*
-
+	 */
 	public static boolean checkJsapiTicket() {
 		return System.currentTimeMillis() - JSAPI_TICKET.getExpires_in() >=7200*1000 ? false:true;
 	}
@@ -250,8 +214,7 @@ public class WeChatUtil {
 	
 	// 获取access_token的接口地址（GET） 限200（次/天）
 
-	*/
-/**
+	/**
 	 * 获取access_token
 	 * 
 	 * @param appid
@@ -259,8 +222,7 @@ public class WeChatUtil {
 	 * @param appsecret
 	 *            密钥
 	 * @return
-	 *//*
-
+	 */
 	public static AccessToken getAccessToken(String appid, String appsecret) {
 		AccessToken accessToken = null;
 
@@ -284,8 +246,7 @@ public class WeChatUtil {
 
 	// 菜单创建（POST） 限100（次/天）
 
-	*/
-/**
+	/**
 	 * 创建菜单
 	 * 
 	 * @param menu
@@ -293,8 +254,7 @@ public class WeChatUtil {
 	 * @param accessToken
 	 *            有效的access_token
 	 * @return 0表示成功，其他值表示失败
-	 *//*
-
+	 */
 	public static int createMenu(String jsonMenu, String accessToken) {
 		int result = 0;
 
@@ -312,14 +272,12 @@ public class WeChatUtil {
 		return result;
 	}
 
-	*/
-/**
+	/**
 	 * 创建分组
 	 * @param groupJson
 	 * @param accessToken
 	 * @return
-	 *//*
-
+	 */
 	public static int createGroup(String groupJson, String accessToken) {
 
 		String url = GROUP_CREATE.replace("ACCESS_TOKEN", accessToken);
@@ -340,15 +298,13 @@ public class WeChatUtil {
 		return result;
 	}
 	
-	*/
-/**
+	/**
 	 * 移动用户到指定组
 	 * @param groupJson
 	 * @param accessToken
 	 * @param flag   true---用户   flase----医生
 	 * @return
-	 *//*
-
+	 */
 	public static int moveGroup(String openid, Group group) {
  		String groupJson = null;
 		if (group == Group.YONGHU) {
@@ -378,14 +334,12 @@ public class WeChatUtil {
 		return result;
 	}
 
-	*/
-/**
+	/**
 	 * 删除分组
 	 * @param groupJson
 	 * @param accessToken
 	 * @return
-	 *//*
-
+	 */
 	public static int deleteGroup(String groupJson, String accessToken) {
 
 		String url = DELETE_GROUP.replace("ACCESS_TOKEN", accessToken);
@@ -407,13 +361,11 @@ public class WeChatUtil {
 		return result;
 	}
 
-	*/
-/**
+	/**
 	 * 查询分组情况
 	 * @param accessToken
 	 * @return
-	 *//*
-
+	 */
 	public static int queryGroup(String accessToken) {
 			
 			String url = QUERY_GROUP.replace("ACCESS_TOKEN", accessToken);
@@ -425,12 +377,10 @@ public class WeChatUtil {
 			return result;
 	}
 
-	*/
-/**
+	/**
 	 * 测试个性化菜单接口
 	 * @param openid
-	 *//*
-
+	 */
 	public static void testAdditionalMenu(String openid) {
 		String accessToken = getAccessToken().getToken();
 		String url = TEST_ADDITIONAL_MENU.replace("ACCESS_TOKEN", accessToken);
@@ -441,12 +391,10 @@ public class WeChatUtil {
 		
 	}
 
-	*/
-/**
+	/**
 	 * 发送模板消息过程中的设置所属行业
 	 * @param openid
-	 *//*
-
+	 */
 	public static void shezsyhy() {
 		String accessToken = getAccessToken().getToken();
 		String url = SHEZSSHY.replace("ACCESS_TOKEN", accessToken);
@@ -455,12 +403,10 @@ public class WeChatUtil {
 		int result = 0;
 	}
 
-	*/
-/**
+	/**
 	 * 发送模板消息过程中的获得模板消息id
 	 * @param openid
-	 *//*
-
+	 */
 	public static String huodmbxxid() {
 		String accessToken = getAccessToken().getToken();
 		String url = HUODMBXXID .replace("ACCESS_TOKEN", accessToken);
@@ -470,12 +416,10 @@ public class WeChatUtil {
 		return templateId;
 	}
 
-	*/
-/**
+	/**
 	 * 发送模板消息过程中的获得模板消息id
 	 * @param openid
-	 *//*
-
+	 */
 	public static void fasmbxx(String openid, String templateid) {
 		String accessToken = getAccessToken().getToken();
 		String url = FASMBXX.replace("ACCESS_TOKEN", accessToken);
@@ -508,13 +452,11 @@ public class WeChatUtil {
 		}
 	}
 	
-	*/
-/**创建个性化菜单
+	/**创建个性化菜单
 	 * @param jsonMenu
 	 * @param accessToken
 	 * @return
-	 *//*
-
+	 */
 	public static int createAdditionalMenu(String jsonMenu, String accessToken) {
 		int result = 0;
 		
@@ -533,4 +475,3 @@ public class WeChatUtil {
 	}
 }
 
-*/

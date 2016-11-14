@@ -1,4 +1,3 @@
-/*
 package com.anteoy.wechat;
 
 
@@ -14,36 +13,24 @@ public class WeChatTempl {
 	
 	
 	
-	*/
-/* 设置所属行业 *//*
-
+	/* 设置所属行业 */
 	private static String SHEZSSHY = "https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN";
 	
-	*/
-/* 获得模板消息id *//*
-
+	/* 获得模板消息id */
 	private static String HUODMBXXID = "https://api.weixin.qq.com/cgi-bin/template/api_add_template?access_token=ACCESS_TOKEN";
 	
-	*/
-/* 发送模板消息 *//*
-
+	/* 发送模板消息 */
 	private static String FASMBXX = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN";
 	
-	*/
-/* 发送用户咨询消息模板id *//*
-
+	/* 发送用户咨询消息模板id */
 	private static String ZIXUN_TEMPLATEID = "";
 	
-	*/
-/* 发送医生回复消息模板id *//*
-
+	/* 发送医生回复消息模板id */
 	private static String HUIF_TEMPLATEID = "JIZzNMxr7PtuZiV1pyy8cIL54NIAVd198kg3EFd6NRU";
-	*/
-/**
+	/**
 	 * 发送模板消息过程中的设置所属行业
 	 * @param openid
-	 *//*
-
+	 */
 	public static void shezsyhy() {
 		String accessToken = WeChatUtil.getAccessToken().getToken();
 		String url = SHEZSSHY.replace("ACCESS_TOKEN", accessToken);
@@ -63,12 +50,10 @@ public class WeChatTempl {
 		fasmbxx(message);
 	}
 
-	*/
-/**
+	/**
 	 * 发送模板消息过程中的获得回复模板消息id
 	 * @param openid
-	 *//*
-
+	 */
 	public static String huodhfmbxxid() {
 		String accessToken = WeChatUtil.getAccessToken().getToken();
 		String url = HUODMBXXID .replace("ACCESS_TOKEN", accessToken);
@@ -79,12 +64,10 @@ public class WeChatTempl {
 		
 	}
 
-	*/
-/**
+	/**
 	 * 发送模板消息过程中的获得咨询模板消息id
 	 * @param openid
-	 *//*
-
+	 */
 	public static String huodzxmbxxid() {
 		String accessToken = WeChatUtil.getAccessToken().getToken();
 		String url = HUODMBXXID.replace("ACCESS_TOKEN", accessToken);
@@ -96,12 +79,10 @@ public class WeChatTempl {
 		
 	}
 	
-	*/
-/**
+	/**
 	 * 发送模板消息过程中的获得审核模板消息id
 	 * @param openid
-	 *//*
-
+	 */
 	public static String huodshmbxxid() {
 		String accessToken = WeChatUtil.getAccessToken().getToken();
 		String url = HUODMBXXID.replace("ACCESS_TOKEN", accessToken);
@@ -113,13 +94,11 @@ public class WeChatTempl {
 		
 	}
 
-	*/
-/**
+	/**
 	 * 发送模板消息过程中的获得模板消息id
 	 * flag true 发给医生  false 患者
 	 * @param openid
-	 *//*
-
+	 */
 	public static int fasmbxx(ZixunMessage message) {
 
 		String path = null;
@@ -162,14 +141,12 @@ public class WeChatTempl {
 	}
 	
 	
-	*/
-/**
+	/**
 	 * 将json中的制表符 回车 换行 替换掉，同时将接收者的openid， 咨询id 替换掉
 	 * @param message
 	 * @param json
 	 * @return
-	 *//*
-
+	 */
 	private static String replace(ZixunMessage message, String json) {
 		json = json.replace("\t", "");
 		json = json.replace("\r", "");
@@ -180,15 +157,13 @@ public class WeChatTempl {
 	}
 	
 	
-	*/
-/**
+	/**
 	 * 发送模板消息，获得返回结果，返回0失败，返回1，成功
 	 * @param url
 	 * @param method
 	 * @param json
 	 * @return
-	 *//*
-
+	 */
 	private static int fasxx(String url, String method, String json) {
 
 		int result = 0;
@@ -202,4 +177,3 @@ public class WeChatTempl {
 	}
 
 }
-*/

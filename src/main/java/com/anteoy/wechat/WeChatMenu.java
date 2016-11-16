@@ -8,9 +8,9 @@ import net.sf.json.JSONObject;
 public class WeChatMenu {
 	
 	public static void main(String[] args) {
-		deletemenu();
+//		deletemenu();
 		chuangjyhcd();
-		chuangjyscd();
+//		chuangjyscd();
 
 	}
 
@@ -42,7 +42,7 @@ public class WeChatMenu {
 	public static void chuangjyhcd() {
 		
 //		String path = WeChatTempl.class.getClassLoader().getResource("/").getPath()+"chuangjyhcd.json"; //web项目下运行的路径
-		String path = "src/json/chuangjyhcd.json"; // java application文件 路径
+		String path = "src/main/java/com/anteoy/json/chuangjyhcd.json"; // java application文件 路径
 		String json = getJson(path);
 		String accessToken = WeChatUtil.getAccessToken().getToken();
 		System.out.println("获取到的TOKEN：\n"+accessToken);

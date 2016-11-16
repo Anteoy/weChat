@@ -145,6 +145,7 @@ public class WeChatUtil {
 	}
 
 	public static void main(String[] args) {
+		WeChatUtil.getAccessToken();
 	}
 
 	/**

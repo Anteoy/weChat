@@ -1,0 +1,17 @@
+{
+	"button": [
+		{
+			"type": "view",
+			"name": "咨询记录",
+			"url":{Common.URL}YoujiayiWeb/oauth.jsp?target=zixun/Zixun/index.html"
+		},
+		{
+			"type": "view",
+			"name": "个人信息",
+			"url":{Common.URL}YoujiayiWeb/oauth.jsp?target=yonghxx/chakgrxx.html"
+		}
+	],
+	"matchrule":{
+		"group_id":"119"
+	}
+};

@@ -1,0 +1,23 @@
+ {
+			"touser":"userOPENID",
+			"template_id":"usertemplateid",
+			"url":"#{url}",	
+			"data":{
+					"first": {
+						"value":"您好，您的申请已审核完毕！",
+						"color":"#173177"
+					},
+					"keyword1":{
+						"value":"个人信息",
+						"color":"#173177"
+					},
+					"keyword2": {
+						"value":"#{shenhjg}",
+						"color":"#173177"
+					},
+					"remark":{
+						"value":"#{shenhsj}点击查看详情",
+						"color":"#173177"
+					}
+			}
+		}

@@ -1,0 +1,27 @@
+ {
+			"touser":"userOPENID",
+			"template_id":"usertemplateid",
+			"url":"#{url}",	
+			"data":{
+					"first": {
+						"value":"#{huifys}医生回复了您的咨询信息。",
+						"color":"#173177"
+					},
+					"keyword1":{
+						"value":"#{huifnr}",
+						"color":"#173177"
+					},
+					"keyword2": {
+						"value":"#{huifys}",
+						"color":"#173177"
+					},
+					"keyword3": {
+						"value":"#{huifsj}",
+						"color":"#173177"
+					},
+					"remark":{
+						"value":"感谢您对#{huifys}医生的认可，如有疑问，请再次咨询。",
+						"color":"#173177"
+					}
+			}
+		}

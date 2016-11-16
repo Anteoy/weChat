@@ -1,0 +1,29 @@
+{
+	"button": [
+		{
+			"type": "view",
+			"name": "健康知识",
+			"url": {Common.URL}YoujiayiWeb/oauth.jsp?target=../JiankzsWeb/mobile/list.html"
+		},
+		{
+			"type": "view", 
+			"name": "我的签约医生", 
+			"url":{Common.URL}YoujiayiWeb/oauth.jsp?target=jiatys/Jiatys/index.html"
+		}, 
+		{
+			"name": "个人信息", 
+				"sub_button": [
+					{
+						"type": "view",
+						"name": "我的信息", 
+						"url":{Common.URL}YoujiayiWeb/oauth.jsp?target=yonghxx/grxx.html"
+					},
+					{
+						"type": "view",
+						"name": "咨询记录", 
+						"url":{Common.URL}YoujiayiWeb/oauth.jsp?target=zixun/Zixun/index.html"
+					}
+				]
+		}
+	]
+};

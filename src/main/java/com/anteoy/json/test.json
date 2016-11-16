@@ -1,0 +1,23 @@
+ {
+			"touser":"userOPENID",
+			"template_id":"usertemplateid",
+			"url":"http://wxtest.h2v.top/YoujiayiWeb2/zixun/Zixun/faqzx.html",
+			"data":{
+					"first": {
+						"value":"#{zxr}发来新的咨询",
+						"color":"#173177"
+					},
+					"keyword1":{
+						"value":"#{zxbt}",
+						"color":"#173177"
+					},
+					"keyword2": {
+						"value":"#{zxsj}",
+						"color":"#173177"
+					},
+					"remark":{
+						"value":"#{zxnr}",
+						"color":"#173177"
+					}
+			}
+		}

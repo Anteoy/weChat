@@ -1,0 +1,12 @@
+{
+	"articles": [{
+		"title": 欢迎关注优家医,
+		"thumb_media_id": 1258,
+		"author": tianjxx,
+		"digest": DIGEST,
+		"show_cover_pic": 0,
+		"content": CONTENT,
+		"content_source_url": CONTENT_SOURCE_URL
+	},
+]
+}
